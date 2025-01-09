@@ -1,0 +1,16 @@
+[
+    {
+        "model": "Trabant 601",
+        "year": 1963,
+        "colorOptions": ["alb", "albastru", "roșu", "verde"],
+        "engine": "26 CP",
+        "fuel": "Benzină"
+    },
+    {
+        "model": "Trabant 1.1",
+        "year": 1990,
+        "colorOptions": ["alb", "galben", "negru"],
+        "engine": "45 CP",
+        "fuel": "Benzină"
+    }
+]

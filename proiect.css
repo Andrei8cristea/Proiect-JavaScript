@@ -1,0 +1,379 @@
+﻿body {
+    background-color: lightgoldenrodyellow;
+    color: darkblue;
+    font-family: Verdana, 'Sans Serif Collection';
+    margin: 0;
+}
+
+#inceput {
+    background-color: darkgoldenrod;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 6px solid seagreen;
+}
+
+section {
+    /*width: 80%;*/
+    /*margin: auto;*/
+    /*margin-top: 10px;*/ /*A trebuit sa le comentez aici deoarece interfereau cu comenzile din grid */
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    background-color: lightblue;
+    box-shadow: 5px 8px #888888;
+}
+
+/*editarea tabelului*/
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: separate;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+tr:first-child {
+    background-color: seagreen;
+}
+
+tr:nth-child(n+2) {
+    background-color: white;
+}
+
+td:nth-child(n+1):hover {
+    background-color: darkgoldenrod;
+    color: lightblue;
+}
+/*sfarsit editarea tabelului*/
+
+/*ediatre afisare video*/
+iframe {
+    display: block;
+    margin: auto;
+    position: relative;
+    width: 100%;
+
+}
+/*sfarsit editare video*/
+
+
+#animatie >h3::after{
+content:"😔"  /*utilizarea "after pentru a afisa un emoji*/
+}
+
+
+/*editarea footer-ului*/
+footer {
+    background-color: darkgoldenrod;
+    color: white;
+    text-align: left;
+    padding: 20px;
+    border-top: 6px solid seagreen;
+    border-bottom: 6px solid seagreen;
+}
+
+footer > a {
+    text-decoration: none;
+    color: seagreen;
+    background-color: lightgoldenrodyellow;
+    padding: 6px;
+    display: block;
+    width: fit-content;
+    margin: auto; /* fixeaza ancora la mijloculul footer-ului */
+    border-radius: 20px;
+    text-align: center; 
+}
+
+footer > a:hover {
+    color: darkblue;
+    font-size: 20px;
+}
+
+/*sfarsit editarea footer-ului*/
+
+/*meniul drop-down realizat cu flex*/
+
+nav ul {
+  list-style-type: none;
+}
+nav ul, nav li {
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  font-weight: bold;
+  transition: background-color 3s, color 3s, font-size 3s;
+}
+
+nav {
+  background-color: #033E3E;
+  height: 50px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+nav > ul.meniu > li > ul.submeniu {
+  display: none;
+}
+nav > ul.meniu > li:hover > ul.submeniu {
+  display: block;
+}
+ul.meniu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+ul.meniu > li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid white;
+  flex: 1 1 200px;
+}
+ul.submeniu > li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid white;
+  background-color: #033E3E;
+}
+nav a:hover {
+  background-color: seagreen;
+  color: black;
+  font-size: 18px;
+  animation: sus 0.5s;
+}
+/* sfarsit meniu drop down */
+
+/* gridul paginii*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 coloane egale */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 2px;
+  grid-gap: 15px; /* Spațiu între elemente */
+  grid-template-areas:
+    "caracteristici caracteristici tabel tabel tabel tabel video video video video"
+    "istorie istorie istorie istorie istorie istorie video video video video"
+    "galerie galerie galerie galerie galerie galerie galerie galerie galerie galerie"
+    "animatie animatie animatie animatie animatie animatie animatie animatie animatie animatie";
+  /*width: 100%; /* Containerul ocupă întreaga lățime a paginii */ /*Am comentat pentru a adauga margin-left si right*/
+}
+
+/* Definirea zonelor */
+#caracteristici {
+  grid-area: caracteristici;
+}
+
+#tabel {
+  grid-area: tabel;
+}
+
+#istorie {
+  grid-area: istorie;
+}
+
+#galerie {
+  grid-area: galerie;
+}
+
+#video {
+  grid-area: video;
+}
+#animatie{
+  grid-area: animatie;
+}
+
+ #container-poze{
+   display:grid;
+   grid-template-columns: repeat(auto-fill,minmax(400px,1fr)); /*numar de coloane variabil*/
+   grid-gap:10px;
+}
+
+#container-poze figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Stiluri pentru imagini */
+#container-poze figure img {
+    width: 100%; /* Imaginea va ocupa toată lățimea containerului */
+    height: auto; /* Proportiile imaginii vor fi mentinute */
+    transition: transform 0.3s ease; /* Animatia de marire a imaginii */
+}
+
+/* Efectul la hover pe imagini */
+#container-poze figure img:hover {
+    transform: scale(1.1); /* Marirea imaginii cu 10% */
+}
+
+/* Stiluri pentru subtitluri */
+#container-poze figure figcaption {
+    text-align: center; /* Centrarea textului */
+    margin-top: 5px; /* Margine sus pentru descriere */
+    font-size: 1rem;
+    color: #333; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+#container-poze figure:hover figcaption {
+    transform: scale(1.2); /* Marirea textului cu 20% */
+    color: red; /* Schimbarea culorii textului in rosu*/
+}
+/*sfarsit grid pagina*/
+
+/*css - restaurare*/
+#inceput-restaurare {
+    background-color: darkgoldenrod;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 6px solid seagreen;
+} 
+#RPasi{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*sfarsit css restaurare */
+
+/* css curiozitati*/
+ #inceput-curiozitati {
+    background-color: darkgoldenrod;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 6px solid seagreen;
+} 
+
+#curiozitati {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+/* sfarsit css curiozitati */
+
+/*pt css-recenzii*/
+ #inceput-recenzii {
+    background-color: darkgoldenrod;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 6px solid seagreen;
+} 
+
+
+#RP {
+    background-color: MediumAquaMarine;
+    border: 2px solid darkgreen;
+    padding: 20px;
+    margin: 5px auto;
+    width: 80%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+#RP h2 {
+    color: darkgreen;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#RP .recenzie {
+    margin-bottom: 20px;
+}
+
+#RP .recenzie h3 {
+    color: darkorange;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#RP .recenzie p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+#RP .recenzie strong {
+    color: darkgreen;
+    font-style: italic;
+}
+
+
+
+#RN {
+    background-color: mistyrose;
+    border: 2px solid darkred;
+    padding: 20px;
+    margin: 5px auto;
+    width: 80%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+#RN h2 {
+    color: darkred;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recenzie {
+    margin-bottom: 20px;
+}
+
+.recenzie h3 {
+    color: darkorange;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.recenzie p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.recenzie strong {
+    color: darkred;
+    font-style: italic;
+}
+/*sfarsit css-recenzii*/
+
+/* animatii cu keyframes */
+.moving-image {
+  width: 300px;
+  height: auto;
+  animation: move 20s ease-in-out infinite; /* Animatia se repetă la infinit */
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0); /* Pozitia initiala (stanga) */
+  }
+  25% {
+    transform: translateX(500%); /* Miscare rapida spre dreapta în primele 5 secunde */
+  }
+  100% {
+    transform: translateX(0); /* Miscare lenta inapoi spre stanga în urmatoarele 15 secunde */
+  }
+}
+/*sfarsit animatii keyframes */
